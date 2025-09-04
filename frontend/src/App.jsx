@@ -1,6 +1,7 @@
 import Navbar from "./layout/Navbar"
 import "./index.css"
 import Home from './pages/Home.jsx';
+import Cards from './components/Cards.jsx'
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
       <Navbar></Navbar>
       <Home></Home>
+      <Cards></Cards>
     </>
   )
 }
