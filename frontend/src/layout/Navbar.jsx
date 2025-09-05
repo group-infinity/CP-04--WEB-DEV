@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Logo from "../assets/navbar/logo.png";
+import Logo from "/imgs/logo.png";
 import Menu from "../assets/navbar/menu.png";
 import Avatar from "../assets/navbar/avatar.png";
 import Fechar from "../assets/navbar/fechar.png";
@@ -66,16 +66,16 @@ function Navbar({irParaPagina}) {
           <nav className="flex h-full items-center">
             <ul className="flex flex-col gap-6 text-2xl font-bold uppercase text-white">
               <li>
-                <a onClick={() => handleNavigation('carros')}>carros</a>
+                <a className="cursor-pointer" onClick={() => handleNavigation('carros')}>carros</a>
               </li>
               <li>
-                <a onClick={() => handleNavigation('lojas')}>lojas</a>
+                <a className="cursor-pointer" onClick={() => handleNavigation('lojas')}>lojas</a>
               </li>
               <li>
-                <a onClick={() => handleNavigation('sobre')}>sobre</a>
+                <a className="cursor-pointer" onClick={() => handleNavigation('sobre')}>sobre</a>
               </li>
               <li>
-                <a onClick={() => handleNavigation('contato')}>contato</a>
+                <a className="cursor-pointer" onClick={() => handleNavigation('contato')}>contato</a>
               </li>
             </ul>
           </nav>

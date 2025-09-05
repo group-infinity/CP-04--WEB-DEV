@@ -150,8 +150,8 @@ const Hero = () => {
       </div>
       <section className="w-full flex justify-center p-5">
         <div className="py-5 px-2 lg:max-w-[80%] w-full flex flex-wrap gap-4">
-          {carros.map((e) => (
-            <CarCard key={e.i} nome={e.nome} preco={e.preco} imagem={e.imagem} />
+          {carros.map((e, index) => (
+            <CarCard key={index} nome={e.nome} preco={e.preco} imagem={e.imagem} />
           ))}
         </div>
       </section>

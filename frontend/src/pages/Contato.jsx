@@ -1,16 +1,47 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from "react";
 
 const Contato = () => {
   const [contato, setContato] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/carros")
+    fetch("http://localhost:5001/contato")
       .then((response) => response.json())
       .then((data) => setContato(data))
       .catch((error) => console.error("Erro ao buscar carros:", error));
   }, []);
 
-  return <div>Contato</div>;
+  console.log(contato);
+
+  return (
+    <>
+      <div className="px-5 lg:max-w-[80%] w-full flex flex-col gap-10 text-5xl font-black py-10">
+        <div className="flex items-center gap-2.5">
+          <h1 className="uppercase ">sobre nós</h1>
+          <span className="h-1 w-full bg-red-600"></span>
+        </div>
+
+        <div className="bg-[rgba(0,0,0,0.85)] p-10 flex flex-col gap-10 rounded-sm">
+          <div className="text-white text-2xl font-bold flex flex-col items-center gap-10">
+            <img
+              src={sobre.imagem}
+              alt="Logo da Infinity Cars"
+              className="max-w-70 w-full"
+            />
+
+            {/* <h4 className="text-4xl uppercase font-black w-full">{sobre.titulo}</h4> */}
+
+            <p className="font-normal text-lg">{sobre.conteudo}</p>
+          </div>
+          <div>
+            {contato.email}
+            {contato.telefone}
+            {contato.endereco}
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </>
+  );
 };
 
 export default Contato;

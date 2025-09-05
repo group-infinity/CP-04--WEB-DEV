@@ -1,11 +1,12 @@
-import { useState } from "react"
+import { useState } from "react";
 import Navbar from "./layout/Navbar";
 import Home from "./pages/Home.jsx";
-import Carros from "./pages/Carros.jsx"
+import Carros from "./pages/Carros.jsx";
 import Contato from "./pages/Contato.jsx";
 import Lojas from "./pages/Lojas.jsx";
 import Sobre from "./pages/Sobre.jsx";
-import Footer from "./components/Footer.jsx";
+import Footer from "./layout/Footer.jsx";
+import Erro from "./pages/Erro.jsx";
 
 function App() {
   const [paginaAtual, setPaginaAtual] = useState("home");
@@ -20,6 +21,8 @@ function App() {
         return <Sobre />;
       case "contato":
         return <Contato />;
+      case "erro":
+        return <Erro />;
       default:
         return <Home />;
     }
@@ -28,7 +31,9 @@ function App() {
   return (
     <>
       <Navbar irParaPagina={setPaginaAtual}></Navbar>
-      <main>{renderizarPagina()}</main>
+      <main className="flex justify-center mt-16 lg:mt-20">
+        {renderizarPagina()}
+      </main>
       <Footer></Footer>
     </>
   );

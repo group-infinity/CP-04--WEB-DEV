@@ -11,9 +11,26 @@ app.use(express.json());
 
 // --- dados de exemplo ---
 const carros = [
-  { id: 1, marca: 'Ford', modelo: 'Mustang', ano: 2020, preco: 250000, imagem: '/img/mustang.jpg' },
-  { id: 2, marca: 'Chevrolet', modelo: 'Camaro', ano: 2021, preco: 270000, imagem: '/img/camaro.jpg' },
-  { id: 3, marca: 'BMW', modelo: 'M3', ano: 2022, preco: 520000, imagem: '/img/bmw-m3.jpg' },
+  {
+    nome: "Jeep",
+    preco: "R$ 310.000",
+    imagem: "imgs/jeep.webp", // use o caminho da sua pasta public
+  },
+  {
+    nome: "Tesla Cybertruck",
+    preco: "R$ 600.000",
+    imagem: "imgs/imagem3.jpg",
+  },
+  {
+    nome: "Tesla Model S",
+    preco: "R$ 650.000",
+    imagem: "imgs/teslaModelS.avif",
+  },
+  {
+    nome: "BYD Seal",
+    preco: "R$ 650.000",
+    imagem: "imgs/imagem2.jpg",
+  },
 ];
 
 const lojas = [
@@ -23,8 +40,8 @@ const lojas = [
 
 const sobre = {
   titulo: 'Sobre a Infinity Cars',
-  conteudo: 'A Infinity Cars é especializada em esportivos e premium. Atuamos com transparência e garantia.',
-  imagem: '/img/sobre.jpg',
+  conteudo: 'A INFINITY CARS é uma empresa especializada na venda de veículos, atuando tanto no segmento de luxo, com marcas renomadas, quanto no mercado de seminovos e multimarcas, oferecendo opções para diferentes perfis de clientes. Entre as inovações do setor, destaca-se a chegada dos carros elétricos, que trazem benefícios como menor impacto ambiental, economia no abastecimento, baixa manutenção e uma experiência de condução mais confortável e silenciosa.',
+  imagem: 'imgs/logo.png',
 };
 
 const contato = {
@@ -34,6 +51,10 @@ const contato = {
   imagem: '/img/contato.jpg',
 };
 
+const erro = {
+  msg: "Erro 404"
+}
+
 // --- rotas solicitadas ---
 app.get('/carros',  (req, res) => res.json(carros));
 app.get('/lojas',   (req, res) => res.json(lojas));
@@ -41,7 +62,11 @@ app.get('/sobre',   (req, res) => res.json(sobre));
 app.get('/contato', (req, res) => res.json(contato));
 
 // 404
-app.use((req, res) => res.status(404).json({ error: 'Rota não encontrada' }));
+app.use((req, res) => {
+  if(res.status(404)){
+    app.get('/erro', (req, res) => res.json(erro));
+  }
+});
 
 // erro genérico
 app.use((err, req, res, next) => {
