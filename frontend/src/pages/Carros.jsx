@@ -5,7 +5,7 @@ const Carros = () => {
   const [carros, setCarros] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5001/carros")
+    fetch(`${import.meta.env.VITE_API_URL}/carros`)
       .then((response) => response.json())
       .then((data) => setCarros(data))
       .catch((error) => console.error("Erro ao buscar carros:", error));

@@ -8,7 +8,7 @@ const Contato = () => {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5001/contato")
+    fetch(`${import.meta.env.VITE_API_URL}/contato`)
       .then((response) => response.json())
       .then((data) => setContato(data))
       .catch((error) => console.error("Erro ao buscar carros:", error));

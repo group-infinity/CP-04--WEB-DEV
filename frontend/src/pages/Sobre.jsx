@@ -4,7 +4,7 @@ const Sobre = () => {
   const [sobre, setSobre] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5001/sobre")
+    fetch(`${import.meta.env.VITE_API_URL}/contato`)
       .then((response) => response.json())
       .then((data) => setSobre(data))
       .catch((error) => console.error("Erro ao buscar carros:", error));
@@ -28,8 +28,8 @@ const Sobre = () => {
             </div>
         </div>
         <div>
-          
-          
+
+
         </div>
       </div>
     </>

@@ -17,7 +17,7 @@ const Lojas = () => {
   const mapCenter = [-23.55052, -46.633308];
 
   useEffect(() => {
-    fetch("http://localhost:5001/lojas")
+    fetch(`${import.meta.env.VITE_API_URL}/lojas`)
       .then((response) => response.json())
       .then((data) => setLojas(data))
       .catch((error) => console.error("Erro ao buscar carros:", error));
