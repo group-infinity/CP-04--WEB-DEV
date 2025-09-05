@@ -6,7 +6,6 @@ import Contato from "./pages/Contato.jsx";
 import Lojas from "./pages/Lojas.jsx";
 import Sobre from "./pages/Sobre.jsx";
 import Footer from "./layout/Footer.jsx";
-import Erro from "./pages/Erro.jsx";
 
 function App() {
   const [paginaAtual, setPaginaAtual] = useState("home");
