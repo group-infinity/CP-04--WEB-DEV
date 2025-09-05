@@ -5,8 +5,7 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-// middlewares
-app.use(cors());           // libera o front em dev
+app.use(cors())
 app.use(express.json());
 
 // --- dados de exemplo ---
@@ -14,7 +13,7 @@ const carros = [
   {
     nome: "Jeep",
     preco: "R$ 310.000",
-    imagem: "imgs/jeep.webp", // use o caminho da sua pasta public
+    imagem: "imgs/jeep.webp",
   },
   {
     nome: "Tesla Cybertruck",
@@ -34,8 +33,8 @@ const carros = [
 ];
 
 const lojas = [
-  { id: 1, nome: 'Infinity Cars - Matriz', endereco: 'Rua Alfa, 123 - Centro', telefone: '(11) 3333-0000', imagem: '/img/loja-matriz.jpg' },
-  { id: 2, nome: 'Infinity Cars - Filial Norte', endereco: 'Av. Beta, 456 - Bairro Norte', telefone: '(11) 3333-1111', imagem: '/img/loja-norte.jpg' },
+  { id: 1, nome: 'Infinity Cars - Matriz', endereco: 'Rua Alfa, 123 - Centro', telefone: '(11) 3333-0000'},
+  { id: 2, nome: 'Infinity Cars - Filial Norte', endereco: 'Av. Beta, 456 - Bairro Norte', telefone: '(11) 3333-1111'},
 ];
 
 const sobre = {
@@ -46,9 +45,8 @@ const sobre = {
 
 const contato = {
   email: 'contato@infinitycars.com',
-  telefone: '(11) 3333-2222',
-  endereco: 'Rua Alfa, 123 - Centro, São Paulo - SP',
-  imagem: '/img/contato.jpg',
+  telefone: '(11) 12345-6789',
+  endereco: ['Rua Alfa, 123 - Centro, São Paulo - SP', 'Av. Beta, 456 - Bairro Norte'],
 };
 
 const erro = {

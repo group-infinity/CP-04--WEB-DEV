@@ -30,11 +30,11 @@ function App() {
 
   return (
     <>
-      <Navbar irParaPagina={setPaginaAtual}></Navbar>
-      <main className="flex justify-center mt-16 lg:mt-20">
-        {renderizarPagina()}
-      </main>
-      <Footer></Footer>
+      <div id="root" className="flex flex-col min-h-screen">
+        <Navbar irParaPagina={setPaginaAtual}></Navbar>
+        <main className="flex justify-center mt-16 lg:mt-20 grow">{renderizarPagina()}</main>
+        <Footer></Footer>
+      </div>
     </>
   );
 }

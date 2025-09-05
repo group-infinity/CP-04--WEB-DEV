@@ -1,6 +1,6 @@
 function CarCard({ nome, preco, imagem }) {
   return (
-    <div className="bg-[rgba(0,0,0,0.85)] rounded-2xl overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all w-full lg:w-[49%] shadow-[0px_0px_20px_-1px_rgba(0,0,0,0.75)]">
+    <div className="bg-[rgba(0,0,0,0.85)] rounded-2xl overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all w-full lg:w-[48%] shadow-[0px_0px_20px_-1px_rgba(0,0,0,0.75)]">
       <div className="p-2">
         <img src={imagem} alt={nome} className="w-full h-56 object-cover rounded-[8px]" />
       </div>

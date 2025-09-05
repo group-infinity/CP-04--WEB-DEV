@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-black text-gray-400 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 space-y-10">
-        
+
         {/* Logo + Descrição em horizontal */}
         <div className="flex flex-col md:flex-row md:items-center md:gap-6">
           <div className="flex items-center gap-3 flex-shrink-0">
