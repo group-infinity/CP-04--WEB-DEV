@@ -4,7 +4,7 @@ const Sobre = () => {
   const [sobre, setSobre] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/sobregit`)
+    fetch(`${import.meta.env.VITE_API_URL}/sobre`)
       .then((response) => response.json())
       .then((data) => setSobre(data))
       .catch((error) => console.error("Erro ao buscar carros:", error));
